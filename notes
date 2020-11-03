@@ -1,0 +1,11 @@
+Ttracker
+
+  has_many :foods 
+
+  day:string, date:datetime?, totalcal:float
+
+Food
+
+  belongs_to :tracker
+
+  tracker_id:integer, name:string, calories:float
