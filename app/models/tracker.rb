@@ -8,18 +8,3 @@ class Tracker < ApplicationRecord
   end
 
 end
-
-
-
-create_table "trackers", force: :cascade do |t|
-  t.string "day"
-  t.datetime "date"
-  t.float "totalcal"
-
-
-create_table "foods", force: :cascade do |t|
-  t.integer "tracker_id"
-  t.string "name"
-  t.float "calories"
-end
-
