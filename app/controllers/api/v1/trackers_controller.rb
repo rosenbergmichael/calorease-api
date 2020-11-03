@@ -1,5 +1,4 @@
 class Api::V1::TrackersController < ApplicationController
-  before_action :set_tracker, only: [:show, :destroy]
 
   def index
     @trackers = Tracker.all 
@@ -18,20 +17,18 @@ class Api::V1::TrackersController < ApplicationController
 
 
   def show
+    @tracker = Tracker.find(params[:id])
     render json: @tracker
   end
 
 
   def destroy
+    @tracker = Tracker.find(params[:id])
     @tracker.destroy
   end
 
   
   private
-
-  def set_tracker
-    @tracker = Tracker.find(params[:id])
-  end
 
   def tracker_params
     params.require(:tracker).permit(:day, :date, :totalcal)
