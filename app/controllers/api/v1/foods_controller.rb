@@ -8,17 +8,25 @@ class Api::V1::FoodsController < ApplicationController
 
 
   def create
-    
+    @food = @tracker.foods.new(food_params)
+    @tracker.update_cal(@food)
+    if @food.save
+      render json: @food 
+    else
+      render json: {error: 'Error, please try again.'}
+    end
   end
 
 
   def show
-
+    @food = Food.find(params[:id])
+    render json: @food 
   end
 
 
   def destroy
-
+    @food = Food.find(params[:id])
+    @food.destroy
   end
 
   
