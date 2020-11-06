@@ -27,6 +27,7 @@ class Api::V1::FoodsController < ApplicationController
   def destroy
     @food = Food.find(params["id"])
     @tracker = Tracker.find(@food.tracker_id)
+    @tracker.delete_food(@food)
     @food.destroy
     render json: @tracker 
   end

@@ -7,4 +7,9 @@ class Tracker < ApplicationRecord
     self.save
   end
 
+  def delete_food(food)
+    self.totalcal = self.totalcal - food.calories
+    self.save
+  end
+
 end
