@@ -1,5 +1,4 @@
 class Api::V1::TrackersController < ApplicationController
-
   def index
     @trackers = Tracker.all 
     render json: @trackers
