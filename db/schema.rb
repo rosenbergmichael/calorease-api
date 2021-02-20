@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_194540) do
+ActiveRecord::Schema.define(version: 2021_02_20_160138) do
 
   create_table "foods", force: :cascade do |t|
     t.integer "tracker_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_194540) do
 
   create_table "trackers", force: :cascade do |t|
     t.string "day"
-    t.datetime "date"
+    t.date "date"
     t.float "totalcal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
